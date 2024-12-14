@@ -1,4 +1,4 @@
-# Activate-Your-Windows-10-11-For-Free-
+# Activate-Your-Windows-10-11-For-Free
 - Windows 10 Windows 10 Home [✔️] Windows 10 Pro [✔️] Windows 10 Enterprise [✔️]  - Windows 11 Windows 11 Home [✔️] Windows 11 Pro [✔️] Windows 11 Enterprise [✔️]
   
  * If you see "Professional" in the list, then you can upgrade your Windows edition to Pro for free! ✔️
