@@ -1,19 +1,25 @@
-# Check for administrator privileges
-if (-not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltinRole] "Administrator")) {
-    Write-Host "Error: This script must be run as administrator."
-    Pause
+#Requires -RunAsAdministrator
+
+# Check Windows Version
+$osInfo = Get-ComputerInfo | Select-Object OsName, OsVersion
+Write-Host "Windows Version: $($osInfo.OsName) - Build $($osInfo.OsVersion)`n"
+
+# Admin check
+if (-NOT ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
+    Write-Host "Error: This script must be run as administrator." -ForegroundColor Red
+    Read-Host "Press Enter to exit..."
     exit 1
 }
 
-# Execute commands
-slmgr.vbs /upk
-slmgr.vbs /cpky
-slmgr.vbs /ckms
+# Main commands
+slmgr /upk
+slmgr /cpky
+slmgr /ckms
 DISM /online /Get-TargetEditions
 sc.exe config LicenseManager start= auto
-sc.exe start LicenseManager
+Start-Service LicenseManager
 sc.exe config wuauserv start= auto
-sc.exe start wuauserv
+Start-Service wuauserv
 changepk.exe /productkey VK7JG-NPHTM-C97JM-9MPGT-3V66T
 slmgr /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX
 slmgr /skms kms8.msguides.com
