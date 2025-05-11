@@ -31,3 +31,6 @@ Start type of the Windows Update service to "automatic" and then starts the serv
 After completing the above commands, you will see the successful message, which means that your Windows has been activated.
 
 🦠 Now, Restart your windows and enjoy 🦠
+
+#about changepk.exe
+Link = https://www.spyshelter.com/exe/microsoft-windows-changepk-exe/
