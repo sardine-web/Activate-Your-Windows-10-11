@@ -20,7 +20,7 @@ sc.exe config LicenseManager start= auto
 Start-Service LicenseManager
 sc.exe config wuauserv start= auto
 Start-Service wuauserv
-changepk.exe /productkey VK7JG-NPHTM-C97JM-9MPGT-3V66T
+changepk.exe /productkey NG4HW-VH26C-733KW-K6F98-J8CK4
 slmgr /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX
 slmgr /skms kms8.msguides.com
 slmgr /ato
